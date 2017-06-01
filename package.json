@@ -1,0 +1,30 @@
+{
+    "name": "contato-rest",
+    "version": "1.0.0",
+    "description": "App CRUD para Contatos com uma interface REST",
+    "main": "index.js",
+    "scripts": {
+        "build": "node index.js",
+        "test": "jasmine-node --verbose spec/api"
+    },
+    "author": "Elias Nogueira <elias.nogueira@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eliasnogueira/contact-api-frisby"
+    },
+    "bugs": {
+        "url": "https://github.com/eliasnogueira/contact-api-frisby/issues"
+    },
+    "keywords": [
+        "frisby",
+        "restify"
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "restify": "^4.3.0"
+    },
+    "devDependencies": {
+        "frisby": "^0.8.5",
+        "jasmine-node": "^1.14.5"
+    }
+}
