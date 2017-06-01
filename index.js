@@ -20,7 +20,40 @@ function getLastID() {
     return contatos[contatos.length -1].id;
 }
 
-// DONE
+/**
+ * @api {get} /api/v1/contact Retorna todos os contatos cadastrados
+ * @apiName GetContatos
+ * @apiGroup Contato
+ *
+ * @apiSuccess {Object} Lista de contatos.
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ * "contatos": [
+ *     {
+ *       "id": 1,
+ *       "nome": "João",
+ *       "email": "joao@gmail.com",
+ *       "idade": 46,
+ *       "restricao": false
+ *     },
+ *     {
+ *       "id": 2,
+ *       "nome": "Maria",
+ *       "email": "maria@gmail.com",
+ *       "idade": 21,
+ *       "restricao": false
+ *     },
+ *     {
+ *       "id": 3,
+ *       "nome": "José",
+ *       "email": "jose@gmail.com",
+ *       "idade": 18,
+ *       "restricao": true
+ *     }
+ * ]
+ * }
+ */
 function getAllContacts(request, response, next) {
     var data = {
         contatos: contatos
@@ -28,7 +61,30 @@ function getAllContacts(request, response, next) {
     response.send(JSON.parse(JSON.stringify(data)));
 }
 
-
+/**
+ * @api {get} /api/v1/contact:id Retorna um contato previamente cadastrado através do seu id.
+ *
+ * @apiParam {Number} id do contato
+ *
+ * @apiName GetContato
+ * @apiGroup Contato
+ *
+ * @apiSuccess {Integer} id ID do contato
+ * @apiSuccess {String} nome Nome do contato
+ * @apiSuccess {String} email E-mail do contato
+ * @apiSuccess {Boolean} restricao Restrição do contato 
+ *
+ *  * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *
+ * {
+ *   "id": 1,
+ *   "nome": "João",
+ *   "email": "joao@gmail.com",
+ *   "idade": 46,
+ *   "restricao": false
+ * }
+ */
 function getContactByID(request, response, next) {
     var id = request.params['id'];
     var encontrou = false;
@@ -47,7 +103,42 @@ function getContactByID(request, response, next) {
     }
 }
 
-
+/**
+ * @api {post} /api/v1/contact Cria um novo contato.
+ *
+ * @apiParam {String} nome Mandatory Nome do contato
+ * @apiParam {String} email Mandatory E-mail do contato
+ * @apiParam {Integer} idade Mandatory Idade do contato 
+ * @apiParam {Boolean} restricao Mandatory Restrição do contato
+ *
+ * @apiParamExample {json} Request-Example:
+ *    {
+ *       "nome": "Elias",
+ *       "email": "elias@gmail.com",
+ *       "idade": 35,
+ *       "restricao": true
+ *    }
+ *
+ * @apiName PostContato
+ * @apiGroup Contato
+ *
+ * @apiSuccess (201) {String} status Status da submissão (sucesso | erro)
+ * @apiSuccess (201) {Object} contato Contato cadastrado com o retorno do ID
+ *
+ *  * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 201 Created
+ *
+ * {
+ *   "status": "sucesso",
+ *   "contato": {
+ *     "id": 4,
+ *     "nome": "Elias",
+ *     "email": "elias@gmail.com",
+ *     "idade": "35",
+ *     "restricao": "true"
+ *   }
+ * }
+ */
 function createContact(request, response, next) {
     var body = request.body;
     
@@ -69,6 +160,44 @@ function createContact(request, response, next) {
 }
 
 
+/**
+ * @api {put} /api/v1/contact:id Modifica um contato existente.
+ *
+ * @apiParam {Number} id do contato
+ *
+ * @apiParam {String} [nome] Optional Nome do contato
+ * @apiParam {String} [email] Optional E-mail do contato
+ * @apiParam {Integer} [idade] Optional Idade do contato 
+ * @apiParam {Boolean} [restricao] OptionalRestrição do contato
+ *
+ * @apiParamExample {json} Request-Example:
+ *    {
+ *       "nome": "Elias",
+ *       "email": "elias@gmail.com",
+ *       "idade": 35,
+ *       "restricao": true
+ *    }
+ *
+ * @apiName UpdateContato
+ * @apiGroup Contato
+ *
+ * @apiSuccess {String} status Status da submissão (sucesso | erro)
+ * @apiSuccess {Object} contato Contato cadastrado com o retorno do ID
+ *
+ *  * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 Created
+ *
+ * {
+ *   "status": "sucesso",
+ *   "contato": {
+ *     "id": 4,
+ *     "nome": "Elias",
+ *     "email": "elias@gmail.com",
+ *     "idade": "35",
+ *     "restricao": "true"
+ *   }
+ * }
+ */
 function updateContact(request, response, next) {
     var id = request.params['id'];
     var encontrou = false;
@@ -118,6 +247,36 @@ function updateContact(request, response, next) {
     }
 }
 
+/**
+ * @api {delete} /api/v1/contact:id Remove um contato existente.
+ *
+ * @apiParam {Number} id do contato
+ *
+ * @apiName DeleteContato
+ * @apiGroup Contato
+ *
+ * @apiSuccess (202) {String} status Status da submissão (sucesso | erro)
+ * @apiSuccess (202) {String} mensagem Mensgaem de retorno da remoção
+ * @apiSuccess (202) {Object} contato Contato removido
+ *
+ *  * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 202 Accepted
+ *
+ * {
+ *   "status": "sucesso",
+ *   "mensagem": "Registro removido",
+ *   "contato": {
+ *     "id": 4,
+ *     "nome": "Elias",
+ *     "email": "elias@gmail.com",
+ *     "idade": "35",
+ *     "restricao": "true"
+ *   }
+ * }
+ * 
+ * @apiErrorExample {json} Error-Response:
+ *     HTTP/1.1 204 No Content
+ */
 function deleteContact(request, response, next) {
     var id = request.params['id'];
     var encontrou = false;
