@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Automação de Testes para API REST</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" href="http://materializecss.com/css/ghpages-materialize.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="red lighten-1">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">&nbsp;Automação de Testes para API REST</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col l9">
+                <p class="caption">Siga todos os passos das pré-condições para que você possa desenvolver os testes durante o workshop. Em caso de dúvidas, <a id="contato" href="#" onclick="a_onClick()">entre em contato comigo</a>.</p>
+                <h5>Lista de pré-condições</h5>
+                <hr/>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div id="node" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Instalar Node.js</div>
+                        <div class="collapsible-body">
+                            <ol>
+                                <li>Acessar o site <a href="https://nodejs.org" target="_blank">https://nodejs.org</a></li>
+                                <li>Clique no menu <i>Downloads</i></li>
+                                <li>Clique sobre o nome da plataforma desejada para instalação</li>
+                                <li>Aguarde o download do arquivo instalador</li>
+                                <li>Clique no arquivo executável e siga os passos propostos pelo instalador</li>
+                                <li>Abra o Prompt de Comando ou Terminal e digite <code>node —help</code> e pressione <i>ENTER</i></li>
+                                <li>A primeira linha retornada deve ter o texto <i>“Usage: node [options] [ -e script | script.js ] [arguments]”</i></li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_node">
+                                <label for="check_node">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="projeto" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Baixar o projeto base</div>
+                        <div class="collapsible-body">
+                            <ol>
+                                <li>Acesse a página do projeto <a href="https://github.com/eliasnogueira/workshop-api-rest-frisby-base" target="_blank">https://github.com/eliasnogueira/workshop-api-rest-frisby-base</a></li>
+                                <li>Se você está familiarizado com Git, faça com clone do projeto através do comando <code>git clone https://github.com/eliasnogueira/workshop-api-rest-frisby-base.git</code> em um local de fácil acesso</li>
+                                <li>Se você não está familiarizado com Git clique no botão Clone or download e depois no link <i>Download</i>. Será necessário descompactar o projeto em algum local de fácil acesso</li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_projeto">
+                                <label for="check_projeto">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="dependencias_execucao" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Instalar dependências de execução do projeto</div>
+                        <div class="collapsible-body">
+                            <ol>
+                                <li>Abra o Prompt de Comando ou terminal e digite <code>npm install -g jasmine-node</code></li>
+                                <li>Aguarde até ser exibido uma lista de todas as dependências instaladas</li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_dependencias_execucao">
+                                <label for="check_dependencias_execucao">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="dependencias_projeto" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Instalar as dependências do projeto</div>
+                        <div class="collapsible-body">
+                            <ol>
+                                <li>Abra o Prompt de Comando e navegue até a pasta do projeto (comando <code>cd</code>)</li>
+                                <li>Execute o seguinte comando <code>npm install</code> e pressione <i>ENTER</i></li>
+                                <li>O Prompt de Comando ou Terminal vai apresentar o texto <i>“restify escutando em http://[::]:3000”</i>
+                                No sistema operacional Windows você receberá uma mensagem do boqueio de acesso. Na tela com esta informação clique no botão <i>Permitir acesso</i></li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_dependencias_projeto">
+                                <label for="check_dependencias_projeto">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="postman" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Instalar o Postman</div>
+                        <div class="collapsible-body">
+                            <ol>
+                                <li>Acesse a página <a href="https://www.getpostman.com/" target="_blank">https://www.getpostman.com/</a></li>
+                                <li>Clique em um dos botões referente a plataforma que você deseja baixar</li>
+                                <li>Aguarde o download do arquivo instalador</li>
+                                <li>Clique no arquivo executável e siga os passos propostos pelo instalador</li>
+                                <li>Após a instalação o Postman será aberto</li>
+                                <li>Faça o cadastro (gratuito) ou efetue o login se você já possui uma conta no Postman</li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_postman">
+                                <label for="check_postman">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="editor" class="collapsible-header"><i class="fa fa-arrow-right" aria-hidden="true"></i>Editor de texto recomendados</div>
+                        <div class="collapsible-body">
+                            <p>É recomendado o uso de alguns dos editores de texto listados abaixo:</p>
+                            <ol>
+                                <li><a href="https://atom.io/" target="_blank">Atom</a></li>
+                                <li><a href="http://brackets.io/" target="_blank">Brackets (que eu uso)</a></li>
+                                <li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a></li>
+                                <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                            </ol>
+                            <p>
+                                <input type="checkbox" id="check_editor">
+                                <label for="check_editor">Já conclui este passo</label>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="duvidas" class="collapsible-header"><i class="fa fa-question" aria-hidden="true"></i>Dúvidas?</div>
+                        <div class="collapsible-body">
+                            <p>Se você tiver qualquer dúvida envie um e-mail para mim com o assunto <i>Workshop TDC SP 2017</i><br>
+                                <img src="e-mail.png">
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://use.fontawesome.com/9cbaf33543.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script src="custom.js"></script>
+</body>
+
+</html>

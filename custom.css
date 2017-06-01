@@ -1,0 +1,17 @@
+a.collection-item {
+    color: #ef5350 !important;
+}
+        
+ol {
+    list-style-type: decimal !important;
+}
+        
+ol:not(.browser-default) li {
+    list-style-type: decimal !important;
+}
+        
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    left: 0px !important;
+    visibility: visible !important;
+}
