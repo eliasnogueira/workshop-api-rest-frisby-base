@@ -17,4 +17,5 @@ A API foi desenvolvida utilizando [restify](http://restify.com/).
 No sistema operacional Windows você receberá uma mensagem do boqueio de acesso. Na tela com esta informação clique no botão _Permitir acesso_
 
 
-
+### Pre condições para execução
+As pré-condições para executar toda a estutura pode ser visualizada em: [https://eliasnogueira.github.io/workshop-api-rest-frisby-base/](https://eliasnogueira.github.io/workshop-api-rest-frisby-base/)
