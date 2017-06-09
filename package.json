@@ -1,33 +1,34 @@
 {
-    "name": "contato-rest",
-    "version": "1.0.0",
-    "description": "App CRUD para Contatos com uma interface REST",
-    "main": "index.js",
-    "scripts": {
-        "build": "node index.js",
-        "test": "jasmine-node --verbose spec/api"
-    },
-    "author": "Elias Nogueira <elias.nogueira@gmail.com>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base"
-    },
-    "bugs": {
-        "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base/issues"
-    },
-    "keywords": [
-        "frisby",
-        "restify"
-    ],
-    "license": "ISC",
-    "dependencies": {
-        "restify": "^4.3.0"
-    },
-    "devDependencies": {
-        "frisby": "^0.8.5",
-        "jasmine-node": "^1.14.5"
-    },
-    "engines": {
-        "node": "6.10.3"
-    }
+  "name": "contato-rest",
+  "version": "1.0.0",
+  "description": "App CRUD para Contatos com uma interface REST",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "node index.js",
+    "test": "jasmine-node --verbose spec/api"
+  },
+  "author": "Elias Nogueira <elias.nogueira@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base"
+  },
+  "bugs": {
+    "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base/issues"
+  },
+  "keywords": [
+    "frisby",
+    "restify"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "frisby": "^0.8.5",
+    "jasmine-node": "^1.14.5"
+  },
+  "engines": {
+    "node": "6.10.3"
+  }
 }
