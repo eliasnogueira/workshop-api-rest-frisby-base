@@ -309,6 +309,27 @@ function deleteContact(request, response, next) {
 
 var app = restify.createServer();
 app.use(restify.bodyParser());
+app.use(restify.authorizationParser());
+
+app.use(function (req, res, next) {
+    var users;
+    
+    users = {
+        admin: {
+            id: 1,
+            password: '12345'
+        }
+    };
+
+    if (req.username == 'anonymous' || !users[req.username] || req.authorization.basic.password !== users[req.username].password) {
+        next(new restify.NotAuthorizedError());
+    } else {
+        next();
+    }
+
+    next();
+});
+
 
 app.get('/api/v1/contact', getAllContacts);
 app.get('/api/v1/contact/:id', getContactByID);

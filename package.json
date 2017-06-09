@@ -10,10 +10,10 @@
     "author": "Elias Nogueira <elias.nogueira@gmail.com>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/eliasnogueira/contact-api-frisby"
+        "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base"
     },
     "bugs": {
-        "url": "https://github.com/eliasnogueira/contact-api-frisby/issues"
+        "url": "https://github.com/eliasnogueira/workshop-api-rest-frisby-base/issues"
     },
     "keywords": [
         "frisby",
@@ -26,5 +26,8 @@
     "devDependencies": {
         "frisby": "^0.8.5",
         "jasmine-node": "^1.14.5"
+    },
+    "engines": {
+        "node": "6.10.3"
     }
 }
