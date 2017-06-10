@@ -337,6 +337,7 @@ app.post('/api/v1/contact', createContact);
 app.put('/api/v1/contact/:id', updateContact);
 app.del('/api/v1/contact/:id', deleteContact);
 
-app.listen(3000, function() {
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
   console.log('%s escutando em %s', app.name, app.url);    
 });
