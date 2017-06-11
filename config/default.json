@@ -1,0 +1,10 @@
+{
+    "user": {
+      "username": "admin",
+      "password": "12345"
+    }, 
+    "environment" : {
+      "url": "http://localhost",
+      "port": 3000
+    }
+}

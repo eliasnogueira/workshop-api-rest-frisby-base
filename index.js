@@ -322,7 +322,7 @@ app.use(function (req, res, next) {
     };
 
     if (req.username == 'anonymous' || !users[req.username] || req.authorization.basic.password !== users[req.username].password) {
-        next(new restify.NotAuthorizedError());
+        next(new restify.NotAuthorizedError("Usuário ou senha inválido"));
     } else {
         next();
     }
