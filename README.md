@@ -14,6 +14,7 @@ A API foi desenvolvida utilizando [restify](http://restify.com/).
 2. Execute o seguinte comando `npm install` e pressione ENTER
 3. Execute o seguinte comando `npm start` e pressione ENTER
 4. O Prompt de Comando ou Terminal vai apresentar o texto _restify escutando em http://[::]:3000_
+5. Pressione CTRL + C para terminar a execução
 
 No sistema operacional Windows você receberá uma mensagem do boqueio de acesso. Na tela com esta informação clique no botão _Permitir acesso_
 
