@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "node index.js",
+    "build": "npm install",
     "test": "jasmine-node --verbose spec/api"
   },
   "author": "Elias Nogueira <elias.nogueira@gmail.com>",
@@ -22,8 +22,7 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "restify": "^4.3.0",
-    "config": "^1.26.1"
+    "restify": "^4.3.0"
   },
   "devDependencies": {
     "frisby": "^0.8.5",

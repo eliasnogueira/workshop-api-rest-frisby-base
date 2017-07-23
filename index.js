@@ -228,7 +228,7 @@ function updateContact(request, response, next) {
         }
 
         if (body.restricao != null) {
-            contatoRetornado.nome = body.restricao;
+            contatoRetornado.restricao = body.restricao;
         }
         
         var data = {
