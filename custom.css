@@ -15,3 +15,8 @@ ol:not(.browser-default) li {
     left: 0px !important;
     visibility: visible !important;
 }
+
+.custom-background {
+    background-image: url(http://www.globalcode.com.br/images/cover-path.svg);
+    background-size: cover
+}
